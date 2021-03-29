@@ -1,0 +1,147 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
+                    xmlns:dxa="http://schemas.devexpress.com/winfx/2008/xaml/accordion" 
+                    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+                    xmlns:local="clr-namespace:FluentDesignTemplate">
+    <dxmvvm:ObjectToObjectConverter x:Key="eventTypeToImageConverter">
+        <dxmvvm:MapItem Source="Meeting" Target="{dx:DXImage 'SvgImages/XAF/Action_Translate.svg'}"/>
+        <dxmvvm:MapItem Source="Celebration" Target="{dx:DXImage 'SvgImages/Business Objects/BO_Role.svg'}"/>
+        <dxmvvm:MapItem Source="OffSite" Target="{dx:DXImage 'SvgImages/Outlook Inspired/Walking.svg'}"/>
+    </dxmvvm:ObjectToObjectConverter>
+    <Style x:Key="accordionChildItemStyle" TargetType="{x:Type dxa:AccordionItem}">
+        <Setter Property="dxwui:RevealHighlightOptions.Mode" Value="BackgroundAndBorder"/>
+        <Setter Property="dxwui:RevealHighlightOptions.BackgroundColor" Value="#19E4D9D9"/>
+        <Setter Property="dxwui:RevealHighlightOptions.BorderColor" Value="#FF615B5B"/>
+        <Setter Property="dxwui:RevealHighlightOptions.BorderThickness" Value="1"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="GlyphSize" Value="20,20"/>
+        <Setter Property="HeaderTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" Foreground="White" Margin="10"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="accordionHeadItemStyle" TargetType="{x:Type dxa:AccordionItem}">
+        <Setter Property="HeaderTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" Foreground="#6DFFFFFF" FontSize="12" Margin="20,20,20,10"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="scaleStyle" TargetType="Border">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1.01" ScaleY="1.01"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="groupBoxStyle" TargetType="GroupBox">
+        <Setter Property="Margin" Value="20, 20, 20, 20"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="dx:ScrollBarExtensions.ScrollBarMode" Value="TouchOverlap"/>
+        <Setter Property="HeaderTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" Margin="15,0,0,0" FontSize="14" Foreground="#6DFFFFFF"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="baseListBoxStyle" TargetType="dxe:ListBoxEdit">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+    </Style>
+    <Style x:Key="viewsListBoxStyle" TargetType="dxe:ListBoxEdit" BasedOn="{StaticResource baseListBoxStyle}">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Border Style="{StaticResource scaleStyle}" Margin="8,0,8,0" Background="White" CornerRadius="2" Width="197">
+                        <StackPanel TextBlock.Foreground="Black">
+                            <Border CornerRadius="2,2,0,0" Height="90" >
+                                <Border.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="{Binding Image}"/>
+                                </Border.Background>
+                            </Border>
+                            <TextBlock Text="{Binding Header}" TextWrapping="Wrap" FontWeight="Bold" Margin="10,10,10,0"/>
+                            <TextBlock Text="{Binding Text}" Margin="10,0,10,10" Foreground="#FFA4A4A4"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="eventBoxStyle" TargetType="dxe:ListBoxEdit" BasedOn="{StaticResource baseListBoxStyle}">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Border Style="{StaticResource scaleStyle}" Background="#1F0B0A15" Margin="5,0,5,0" ClipToBounds="True">
+                        <Grid TextBlock.Foreground="Black" Margin="0,9,0,9">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Image x:Name="image" Width="25" Height="25" Margin="20,0,5,0" Source="{Binding Type, Converter={StaticResource eventTypeToImageConverter}}"/>
+                            <TextBlock Grid.Column="1" Text="{Binding Header}" FontSize="12" Margin="10" Foreground="White"/>
+                            <TextBlock Grid.Column="2" Text="{Binding Text}" FontSize="12" Margin="10" Foreground="#6DFFFFFF"/>
+                            <dx:SimpleButton CornerRadius="2" Content="Join" Foreground="White" Background="#BF60B5CC" BorderBrush="Transparent" BorderThickness="0" Grid.Column="3" HorizontalAlignment="Right" Height="18" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" Padding="10,0" Margin="0,0,14,0"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="reportBoxStyle" TargetType="dxe:ListBoxEdit" BasedOn="{StaticResource baseListBoxStyle}">
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"  />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Border Style="{StaticResource scaleStyle}" Margin="8">
+                        <Grid Width="180">
+                            <StackPanel>
+                                <Border Grid.RowSpan="2" CornerRadius="2" Height="70">
+                                    <Border.Background>
+                                        <ImageBrush Stretch="Fill" ImageSource="{Binding Image}"/>
+                                    </Border.Background>
+                                </Border>
+                                <TextBlock Foreground="#6DFFFFFF" HorizontalAlignment="Left" TextAlignment="Center" FontSize="12" Text="{Binding Header}" Margin="0,2,8,0" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

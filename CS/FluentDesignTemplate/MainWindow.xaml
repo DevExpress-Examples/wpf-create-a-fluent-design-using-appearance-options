@@ -1,0 +1,123 @@
+﻿<dx:ThemedWindow
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:local="clr-namespace:FluentDesignTemplate"
+        xmlns:dxa="http://schemas.devexpress.com/winfx/2008/xaml/accordion" 
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        Padding="0"
+        ShowGlow="False"
+        HeaderForeground="White"
+        x:Class="FluentDesignTemplate.MainWindow" BorderThickness="0" 
+        mc:Ignorable="d"
+        Title="YourCRM" Height="665" Width="1190" EnableAcrylic="True" AcrylicOpacity="0.6" AcrylicColor="#FF02111D" Icon="{dx:DXImage SvgImages/Icon Builder/Business_Target.svg}" ActiveGlowColor="#FF02111D">
+    <dx:ThemedWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ViewResourceDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </dx:ThemedWindow.Resources>
+    <dx:WpfSvgPalette.Palette>
+        <dx:WpfSvgPalette>
+            <SolidColorBrush x:Key="Blue" Color="White"/>
+            <SolidColorBrush x:Key="Black" Color="White"/>
+            <SolidColorBrush x:Key="Yellow" Color="White"/>
+            <SolidColorBrush x:Key="Red" Color="White"/>
+            <SolidColorBrush x:Key="Green" Color="White"/>
+        </dx:WpfSvgPalette>
+    </dx:WpfSvgPalette.Palette>
+    <dx:ThemedWindow.DataContext>
+        <local:MainViewModel/>
+    </dx:ThemedWindow.DataContext>
+    <dx:ThemedWindow.HeaderItems>
+        <StackPanel Orientation="Horizontal" Margin="0,5,20,0">
+            <dx:WpfSvgPalette.Palette>
+                <dx:WpfSvgPalette>
+                    <SolidColorBrush x:Key="Black" Color="White"/>
+                </dx:WpfSvgPalette>
+            </dx:WpfSvgPalette.Palette>
+            <dxe:ButtonEdit Background="#1FFFFFFF" Margin="0,0,30,0" Width="230" NullText="Search everywhere..." BorderThickness="0" BorderBrush="Transparent" AllowDefaultButton="False">
+                <dxe:ButtonInfo IsLeft="True" GlyphKind="Custom">
+                    <dxe:ButtonInfo.Template>
+                        <DataTemplate>
+                            <dx:DXImage Source="{dx:DXImage SvgImages/Icon Builder/Actions_Zoom.svg}" Height="20" Width="20" Margin="4,0,0,0"/>
+                        </DataTemplate>
+                    </dxe:ButtonInfo.Template>
+                </dxe:ButtonInfo>
+            </dxe:ButtonEdit>
+            <dxb:MainMenuControl VerticalAlignment="Center" ShowBackground="False" Height="25" AllowCustomizationMenu="True">
+                <dx:WpfSvgPalette.Palette>
+                    <dx:WpfSvgPalette>
+                        <SolidColorBrush x:Key="Blue" Color="White"/>
+                    </dx:WpfSvgPalette>
+                </dx:WpfSvgPalette.Palette>
+                <dxb:BarSplitButtonItem Content="Alex" ActAsDropDown="True" BarItemDisplayMode="ContentAndGlyph" Glyph="{dx:DXImage SvgImages/Business Objects/BO_Customer.svg}">
+                    <dxb:PopupMenu>
+                        <dxb:BarButtonItem Content="Sign Out"/>
+                    </dxb:PopupMenu>
+                </dxb:BarSplitButtonItem>
+            </dxb:MainMenuControl>
+        </StackPanel>
+    </dx:ThemedWindow.HeaderItems>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid Width="220" Margin="0,0,0,0">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                    <GradientStop Color="Transparent" Offset="0" />
+                    <GradientStop Color="#6F2B323B" Offset="1" />
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <dxa:AccordionControl RootItemExpandButtonPosition="None"  ViewMode="Accordion" Background="Transparent" BorderThickness="0" AutoExpandAllItems="True">
+                <dxa:AccordionItem Header="MENU"  Style="{StaticResource accordionHeadItemStyle}">
+                    <dxa:AccordionItem  Header="Home" Style="{StaticResource accordionChildItemStyle}" Glyph="{dx:DXImage SvgImages/Icon Builder/Actions_Home.svg}"/>
+                    <dxa:AccordionItem Header="Recent" Style="{StaticResource accordionChildItemStyle}" Glyph="{dx:DXImage SvgImages/Business Objects/BO_Audit_ChangeHistory.svg}" />
+                    <dxa:AccordionItem Header="Pinned" Style="{StaticResource accordionChildItemStyle}" Glyph="{dx:DXImage SvgImages/Dashboards/UnpinButton.svg}"/>
+                </dxa:AccordionItem>
+                <dxa:AccordionItem Header="MY WORK" Style="{StaticResource accordionHeadItemStyle}">
+                    <dxa:AccordionItem Header="Dashboards" Style="{StaticResource accordionChildItemStyle}" Glyph="{dx:DXImage SvgImages/Business Objects/BO_Dashboard.svg}"/>
+                    <dxa:AccordionItem Header="Activities" Style="{StaticResource accordionChildItemStyle}" Glyph="{dx:DXImage SvgImages/Outlook Inspired/FolderPanel.svg}"/>
+                    <dxa:AccordionItem Header="Accounts" Style="{StaticResource accordionChildItemStyle}" Glyph="{dx:DXImage SvgImages/Business Objects/BO_Department.svg}"/>
+                </dxa:AccordionItem>
+                <dxa:AccordionItem Header="SALES"  Style="{StaticResource accordionHeadItemStyle}">
+                    <dxa:AccordionItem Header="Leads" Style="{StaticResource accordionChildItemStyle}" Glyph="{dx:DXImage SvgImages/Dashboards/CrossDataSourceFiltering.svg}"/>
+                    <dxa:AccordionItem Header="Opportunities" Style="{StaticResource accordionChildItemStyle}" Glyph="{dx:DXImage SvgImages/PDF Viewer/MarqueeZoom.svg}"/>
+                    <dxa:AccordionItem Header="Competitors" Style="{StaticResource accordionChildItemStyle}" Glyph="{dx:DXImage SvgImages/Reports/ChartDesigner.svg}"/>
+                </dxa:AccordionItem>
+            </dxa:AccordionControl>
+            <dx:SimpleButton Grid.Row="1" CornerRadius="3" Foreground="White" Background="#BF60B5CC" Width="140" Height="40" Content="AI Assistant"/>
+            <TextBlock Grid.Row="2" HorizontalAlignment="Center" Foreground="#6DFFFFFF" FontFamily="Arial Rounded MT" Text="App v1.01" FontSize="8" Margin="20"/>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <GroupBox Grid.ColumnSpan="2" Header="Views" Style="{StaticResource groupBoxStyle}">
+                <dxe:ListBoxEdit ItemsSource="{Binding AnalysisItems}" Style="{StaticResource viewsListBoxStyle}"/>
+            </GroupBox>
+            <GroupBox Grid.Row="1" Grid.Column="0" Header="Events" Style="{StaticResource groupBoxStyle}" >
+                <dxe:ListBoxEdit ItemsSource="{Binding Events}" Style="{StaticResource eventBoxStyle}"/>
+            </GroupBox>
+            <GroupBox Grid.Row="1" Grid.Column="1" Header="Reports" Style="{StaticResource groupBoxStyle}" Padding="12,0,12,12">
+                <dxe:ListBoxEdit ItemsSource="{Binding Reports}" Style="{StaticResource reportBoxStyle}"/>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</dx:ThemedWindow>
