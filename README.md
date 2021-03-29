@@ -6,19 +6,19 @@ This example demonstrates how to create the following view with DevExpress compo
 
 
 Here are the main controls used in the view:
-1. ThemedWindow - the window with the acrylic effect 
-2. AccordionControl - the navigation control on the left
-3. MainMenuControl with bar items - the user menu in the top right corner
-4. ListBoxEdit - the galleries in the main part
-5. ButtonEdit - the search field in the window header
+1. [ThemedWindow](https://docs.devexpress.com/WPF/DevExpress.Xpf.Core.ThemedWindow) - the window with the acrylic effect 
+2. [AccordionControl](https://docs.devexpress.com/WPF/118347/controls-and-libraries/navigation-controls/accordion-control) - the navigation control on the left
+3. [MainMenuControl](https://docs.devexpress.com/WPF/DevExpress.Xpf.Bars.MainMenuControl) with [bar items](https://docs.devexpress.com/WPF/6553/controls-and-libraries/ribbon-bars-and-menu/bars/populating-bars/items-and-links) - the user menu in the top right corner
+4. [ListBoxEdit](https://docs.devexpress.com/WPF/DevExpress.Xpf.Editors.ListBoxEdit) - the galleries in the main part
+5. [ButtonEdit](https://docs.devexpress.com/WPF/DevExpress.Xpf.Editors.ButtonEdit) - the search field in the window header
 
 
 We used the following features to achieve this design:
-1. Acrylic effect
+1. [Acrylic effect](https://docs.devexpress.com/WPF/401394/common-concepts/fluent-design-support#acrylic-window-background)
 ```csharp
 <dx:ThemedWindow AcrylicOpacity="0.6" AcrylicColor="#FF02111D" ... 
 ```
-2. Reveal highlight effect
+2. [Reveal highlight effect](https://docs.devexpress.com/WPF/401394/common-concepts/fluent-design-support#reveal-highlight)
 ```csharp
 <Style x:Key="accordionChildItemStyle" TargetType="{x:Type dxa:AccordionItem}">
     <Setter Property="dxwui:RevealHighlightOptions.Mode" Value="BackgroundAndBorder"/>
@@ -28,17 +28,19 @@ We used the following features to achieve this design:
 </Style>
 ```
 
-3. Theme palettes:
+3. [Theme palettes](https://docs.devexpress.com/WPF/400728/common-concepts/themes/palettes) to customize theme colors:
 ```csharp
 var custompalette = new ThemePalette("CustomPalette");
 custompalette.SetColor("Foreground", Colors.White);
 custompalette.SetColor("Focused", (Color)ColorConverter.ConvertFromString("#A04B647A"));
-custompalette.SetColor("HoverBackground", 
+custompalette.SetColor("HoverBackground", (Color)ColorConverter.ConvertFromString("#1FFFFFFF"));
 //… 
 var customtheme = Theme.CreateTheme(custompalette, Theme.Office2019Black);
 Theme.RegisterTheme(customtheme);
 ApplicationThemeHelper.ApplicationThemeName = customtheme.Name;
-SVG image palettes:
+```
+4. [SVG image palettes](https://docs.devexpress.com/WPF/120131/common-concepts/images/svg-images#svg-image-palettes):
+```csharp
 <dx:WpfSvgPalette.Palette>
     <dx:WpfSvgPalette>
         <SolidColorBrush x:Key="Blue" Color="White"/>
@@ -50,8 +52,8 @@ SVG image palettes:
 </dx:WpfSvgPalette.Palette>
 ```
 
-4. SimpleButtons with a corner radius:
+5. [SimpleButtons](https://docs.devexpress.com/WPF/DevExpress.Xpf.Core.SimpleButton) with a corner radius:
 ```csharp
 <dx:SimpleButton CornerRadius="2" 
 ```
-5. The ThemedWindow.HeaderItems property to add elements to the window header.
+6. The [ThemedWindow.HeaderItems](https://docs.devexpress.com/WPF/DevExpress.Xpf.Core.ThemedWindow.HeaderItems) property to add elements to the window header.
