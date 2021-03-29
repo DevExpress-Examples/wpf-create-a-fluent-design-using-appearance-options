@@ -57,3 +57,5 @@ ApplicationThemeHelper.ApplicationThemeName = customtheme.Name;
 <dx:SimpleButton CornerRadius="2" 
 ```
 6. The [ThemedWindow.HeaderItems](https://docs.devexpress.com/WPF/DevExpress.Xpf.Core.ThemedWindow.HeaderItems) property to add elements to the window header.
+
+Please note that you need to restore the **Mono.Cecil** NuGet package to run the sample. 
