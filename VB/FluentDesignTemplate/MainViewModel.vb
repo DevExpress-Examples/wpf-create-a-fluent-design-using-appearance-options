@@ -52,7 +52,7 @@ Namespace FluentDesignTemplate
 					.Image = GetImage("Performance Review.png")
 				},
 				New ReportItem() With {
-					.Header = "Produced Products",
+					.Header = "New Products",
 					.Image = GetImage("Produced Products.png")
 				},
 				New ReportItem() With {
@@ -64,7 +64,7 @@ Namespace FluentDesignTemplate
 					.Image = GetImage("Sales.png")
 				},
 				New ReportItem() With {
-					.Header = "Vehicle Inspection",
+					.Header = "Inspection Report",
 					.Image = GetImage("Vehicle Inspection.png")
 				}
 			}
@@ -73,22 +73,22 @@ Namespace FluentDesignTemplate
 			Events = New ObservableCollection(Of EventItem)() From {
 				New EventItem() With {
 					.Header = "Meeting",
-					.Text = "Strategy discussion",
+					.Text = "Strategy Review",
 					.Type = EventType.Meeting
 				},
 				New EventItem() With {
-					.Header = "Celebration",
-					.Text = "New Year Party",
+					.Header = "Office Party",
+					.Text = "New Year’s Celebration",
 					.Type = EventType.Celebration
 				},
 				New EventItem() With {
 					.Header = "Off-site event",
-					.Text = "Management seminar",
+					.Text = "Management Training",
 					.Type = EventType.OffSite
 				},
 				New EventItem() With {
 					.Header = "Meeting",
-					.Text = "COVID-19 impact",
+					.Text = "COVID-19 Impact",
 					.Type = EventType.Meeting
 				},
 				New EventItem() With {
