@@ -115,7 +115,7 @@
             <GroupBox Grid.Row="1" Grid.Column="0" Header="Events" Style="{StaticResource groupBoxStyle}" >
                 <dxe:ListBoxEdit ItemsSource="{Binding Events}" Style="{StaticResource eventBoxStyle}"/>
             </GroupBox>
-            <GroupBox Grid.Row="1" Grid.Column="1" Header="Reports" Style="{StaticResource groupBoxStyle}" Padding="12,0,12,12">
+            <GroupBox Grid.Row="1" Grid.Column="1" Header="Reports" Style="{StaticResource groupBoxStyle}" Padding="6,0,6,6">
                 <dxe:ListBoxEdit ItemsSource="{Binding Reports}" Style="{StaticResource reportBoxStyle}"/>
             </GroupBox>
         </Grid>

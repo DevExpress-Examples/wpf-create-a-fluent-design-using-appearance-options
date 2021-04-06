@@ -33,16 +33,16 @@ namespace FluentDesignTemplate
 
             Reports = new ObservableCollection<ReportItem>() { new ReportItem() { Header = "Balance", Image = GetImage("Balance.png") },
             new ReportItem() { Header = "Performance Review", Image = GetImage("Performance Review.png") },
-            new ReportItem() { Header = "Produced Products", Image = GetImage("Produced Products.png") },
+            new ReportItem() { Header = "New Products", Image = GetImage("Produced Products.png") },
             new ReportItem() { Header = "Revenue", Image = GetImage("Revenue.png") },
             new ReportItem() { Header = "Sales", Image = GetImage("Sales.png") },
-            new ReportItem() { Header = "Vehicle Inspection", Image = GetImage("Vehicle Inspection.png") }};
+            new ReportItem() { Header = "Inspection Report", Image = GetImage("Vehicle Inspection.png") }};
 
 
-            Events = new ObservableCollection<EventItem>() { new EventItem() { Header = "Meeting", Text = "Strategy discussion", Type = EventType.Meeting },
-            new EventItem() { Header = "Celebration", Text = "New Year Party", Type = EventType.Celebration },
-            new EventItem() { Header = "Off-site event", Text = "Management seminar", Type = EventType.OffSite },
-            new EventItem() { Header = "Meeting", Text = "COVID-19 impact", Type = EventType.Meeting },
+            Events = new ObservableCollection<EventItem>() { new EventItem() { Header = "Meeting", Text = "Strategy Review", Type = EventType.Meeting },
+            new EventItem() { Header = "Office Party", Text = "New Year’s Celebration", Type = EventType.Celebration },
+            new EventItem() { Header = "Off-site event", Text = "Management Training", Type = EventType.OffSite },
+            new EventItem() { Header = "Meeting", Text = "COVID-19 Impact", Type = EventType.Meeting },
             new EventItem() { Header = "Off-site event", Text = "Conference", Type = EventType.OffSite }};
         }
 
