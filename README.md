@@ -1,6 +1,6 @@
 # How to Create a Unique Design for a WPF View using Appearance Options
 
-This example demonstrates how to create the following view with DevExpress components:
+This example demonstrates how to create a view styled according to [Fluent Design](https://docs.microsoft.com/en-us/windows/apps/fluent-design-system) with DevExpress components.
 
 ![Alt text](Images/preview.png)
 
