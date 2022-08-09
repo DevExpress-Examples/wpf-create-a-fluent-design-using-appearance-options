@@ -1,14 +1,15 @@
-﻿Imports DevExpress.Xpf.Core
+Imports DevExpress.Xpf.Core
 
 Namespace FluentDesignTemplate
-	''' <summary>
-	''' Interaction logic for MainWindow.xaml
-	''' </summary>
-	Partial Public Class MainWindow
-		Inherits ThemedWindow
 
-		Public Sub New()
-			InitializeComponent()
-		End Sub
-	End Class
+    ''' <summary>
+    ''' Interaction logic for MainWindow.xaml
+    ''' </summary>
+    Public Partial Class MainWindow
+        Inherits ThemedWindow
+
+        Public Sub New()
+            Me.InitializeComponent()
+        End Sub
+    End Class
 End Namespace
