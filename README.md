@@ -3,12 +3,11 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T985945)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# How to Create a Unique Design for a WPF View using Appearance Options
+# Create a Unique Design for a WPF View using Appearance Options
 
-This example demonstrates how to create a view styled according to [Fluent Design](https://docs.microsoft.com/en-us/windows/apps/fluent-design-system) with DevExpress components.
+This example creates a view styled according to [Fluent Design](https://docs.microsoft.com/en-us/windows/apps/fluent-design-system) with DevExpress components.
 
 ![Alt text](Images/preview.png)
-
 
 Here are the main controls used in the view:
 1. [ThemedWindow](https://docs.devexpress.com/WPF/DevExpress.Xpf.Core.ThemedWindow) - the window with the acrylic effect 
@@ -64,3 +63,15 @@ ApplicationThemeHelper.ApplicationThemeName = customtheme.Name;
 6. The [ThemedWindow.HeaderItems](https://docs.devexpress.com/WPF/DevExpress.Xpf.Core.ThemedWindow.HeaderItems) property to add elements to the window header.
 
 Please note that you need to restore the **Mono.Cecil** NuGet package to run the sample. 
+
+## Files to Look At
+
+* [MainWindow.xaml](/CS/FluentDesignTemplate/MainWindow.xaml)
+* [MainViewModel.cs](/CS/FluentDesignTemplate/MainViewModel.cs)
+* [ViewResourceDictionary.xaml](/CS/FluentDesignTemplate/ViewResourceDictionary.xaml)
+
+## Documentation
+
+* [Fluent Design Support](https://docs.devexpress.com/WPF/401394/common-concepts/fluent-design-support)
+* [Palettes](https://docs.devexpress.com/WPF/400728/common-concepts/themes/palettes)
+* [SVG Image Palettes](https://docs.devexpress.com/WPF/120131/common-concepts/images/svg-images#svg-image-palettes)
