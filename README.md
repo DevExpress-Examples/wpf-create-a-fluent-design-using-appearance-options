@@ -66,9 +66,9 @@ Please note that you need to restore the **Mono.Cecil** NuGet package to run the
 
 ## Files to Look At
 
-* [MainWindow.xaml](/CS/FluentDesignTemplate/MainWindow.xaml)
-* [MainViewModel.cs](/CS/FluentDesignTemplate/MainViewModel.cs)
-* [ViewResourceDictionary.xaml](/CS/FluentDesignTemplate/ViewResourceDictionary.xaml)
+* [MainWindow.xaml](/CS/FluentDesignTemplate/MainWindow.xaml) (VB: [MainWindow.xaml](/VB/FluentDesignTemplate/MainWindow.xaml))
+* [MainViewModel.cs](/CS/FluentDesignTemplate/MainViewModel.cs) (VB: [MainViewModel.cs](/VB/FluentDesignTemplate/MainViewModel.vb))
+* [ViewResourceDictionary.xaml](/CS/FluentDesignTemplate/ViewResourceDictionary.xaml) (VB: [ViewResourceDictionary.xaml](/VB/FluentDesignTemplate/ViewResourceDictionary.xaml))
 
 ## Documentation
 
