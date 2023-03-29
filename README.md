@@ -19,11 +19,11 @@ Here are the main controls used in the view:
 
 We used the following features to achieve this design:
 1. [Acrylic effect](https://docs.devexpress.com/WPF/401394/common-concepts/fluent-design-support#acrylic-window-background)
-```csharp
+```xaml
 <dx:ThemedWindow AcrylicOpacity="0.6" AcrylicColor="#FF02111D" ... 
 ```
 2. [Reveal highlight effect](https://docs.devexpress.com/WPF/401394/common-concepts/fluent-design-support#reveal-highlight)
-```csharp
+```xaml
 <Style x:Key="accordionChildItemStyle" TargetType="{x:Type dxa:AccordionItem}">
     <Setter Property="dxwui:RevealHighlightOptions.Mode" Value="BackgroundAndBorder"/>
     <Setter Property="dxwui:RevealHighlightOptions.BackgroundColor" Value="#19E4D9D9"/>
@@ -44,7 +44,7 @@ Theme.RegisterTheme(customtheme);
 ApplicationThemeHelper.ApplicationThemeName = customtheme.Name;
 ```
 4. [SVG image palettes](https://docs.devexpress.com/WPF/120131/common-concepts/images/svg-images#svg-image-palettes):
-```csharp
+```xaml
 <dx:WpfSvgPalette.Palette>
     <dx:WpfSvgPalette>
         <SolidColorBrush x:Key="Blue" Color="White"/>
@@ -57,8 +57,8 @@ ApplicationThemeHelper.ApplicationThemeName = customtheme.Name;
 ```
 
 5. [SimpleButtons](https://docs.devexpress.com/WPF/DevExpress.Xpf.Core.SimpleButton) with a corner radius:
-```csharp
-<dx:SimpleButton CornerRadius="2" 
+```xaml
+<dx:SimpleButton CornerRadius="2" ...
 ```
 6. The [ThemedWindow.HeaderItems](https://docs.devexpress.com/WPF/DevExpress.Xpf.Core.ThemedWindow.HeaderItems) property to add elements to the window header.
 
