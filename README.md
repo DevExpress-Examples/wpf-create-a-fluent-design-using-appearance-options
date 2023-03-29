@@ -18,48 +18,57 @@ Here are the main controls used in the view:
 
 
 We used the following features to achieve this design:
-1. [Acrylic effect](https://docs.devexpress.com/WPF/401394/common-concepts/fluent-design-support#acrylic-window-background)
-```xaml
-<dx:ThemedWindow AcrylicOpacity="0.6" AcrylicColor="#FF02111D" ... 
-```
-2. [Reveal highlight effect](https://docs.devexpress.com/WPF/401394/common-concepts/fluent-design-support#reveal-highlight)
-```xaml
-<Style x:Key="accordionChildItemStyle" TargetType="{x:Type dxa:AccordionItem}">
-    <Setter Property="dxwui:RevealHighlightOptions.Mode" Value="BackgroundAndBorder"/>
-    <Setter Property="dxwui:RevealHighlightOptions.BackgroundColor" Value="#19E4D9D9"/>
-    <Setter Property="dxwui:RevealHighlightOptions.BorderColor" Value="#FF615B5B"/>
-    <Setter Property="dxwui:RevealHighlightOptions.BorderThickness" Value="1"/>
-</Style>
-```
+
+1. [Acrylic effect](https://docs.devexpress.com/WPF/401394/common-concepts/fluent-design-support#acrylic-window-background):
+
+   ```xaml
+   <dx:ThemedWindow AcrylicOpacity="0.6" AcrylicColor="#FF02111D" ... 
+   ```
+
+2. [Reveal highlight effect](https://docs.devexpress.com/WPF/401394/common-concepts/fluent-design-support#reveal-highlight):
+
+   ```xaml
+   <Style x:Key="accordionChildItemStyle" TargetType="{x:Type dxa:AccordionItem}">
+       <Setter Property="dxwui:RevealHighlightOptions.Mode" Value="BackgroundAndBorder"/>
+       <Setter Property="dxwui:RevealHighlightOptions.BackgroundColor" Value="#19E4D9D9"/>
+       <Setter Property="dxwui:RevealHighlightOptions.BorderColor" Value="#FF615B5B"/>
+       <Setter Property="dxwui:RevealHighlightOptions.BorderThickness" Value="1"/>
+   </Style>
+   ```
 
 3. [Theme palettes](https://docs.devexpress.com/WPF/400728/common-concepts/themes/palettes) to customize theme colors:
-```csharp
-var custompalette = new ThemePalette("CustomPalette");
-custompalette.SetColor("Foreground", Colors.White);
-custompalette.SetColor("Focused", (Color)ColorConverter.ConvertFromString("#A04B647A"));
-custompalette.SetColor("HoverBackground", (Color)ColorConverter.ConvertFromString("#1FFFFFFF"));
-//… 
-var customtheme = Theme.CreateTheme(custompalette, Theme.Office2019Black);
-Theme.RegisterTheme(customtheme);
-ApplicationThemeHelper.ApplicationThemeName = customtheme.Name;
-```
+
+   ```csharp
+   var custompalette = new ThemePalette("CustomPalette");
+   custompalette.SetColor("Foreground", Colors.White);
+   custompalette.SetColor("Focused", (Color)ColorConverter.ConvertFromString("#A04B647A"));
+   custompalette.SetColor("HoverBackground", (Color)ColorConverter.ConvertFromString("#1FFFFFFF"));
+   //… 
+   var customtheme = Theme.CreateTheme(custompalette, Theme.Office2019Black);
+   Theme.RegisterTheme(customtheme);
+   ApplicationThemeHelper.ApplicationThemeName = customtheme.Name;
+   ```
+
 4. [SVG image palettes](https://docs.devexpress.com/WPF/120131/common-concepts/images/svg-images#svg-image-palettes):
-```xaml
-<dx:WpfSvgPalette.Palette>
-    <dx:WpfSvgPalette>
-        <SolidColorBrush x:Key="Blue" Color="White"/>
-        <SolidColorBrush x:Key="Black" Color="White"/>
-        <SolidColorBrush x:Key="Yellow" Color="White"/>
-        <SolidColorBrush x:Key="Red" Color="White"/>
-        <SolidColorBrush x:Key="Green" Color="White"/>
-    </dx:WpfSvgPalette>
-</dx:WpfSvgPalette.Palette>
-```
+
+   ```xaml
+   <dx:WpfSvgPalette.Palette>
+       <dx:WpfSvgPalette>
+           <SolidColorBrush x:Key="Blue" Color="White"/>
+           <SolidColorBrush x:Key="Black" Color="White"/>
+           <SolidColorBrush x:Key="Yellow" Color="White"/>
+           <SolidColorBrush x:Key="Red" Color="White"/>
+           <SolidColorBrush x:Key="Green" Color="White"/>
+       </dx:WpfSvgPalette>
+   </dx:WpfSvgPalette.Palette>
+   ```
 
 5. [SimpleButtons](https://docs.devexpress.com/WPF/DevExpress.Xpf.Core.SimpleButton) with a corner radius:
-```xaml
-<dx:SimpleButton CornerRadius="2" ...
-```
+
+   ```xaml
+   <dx:SimpleButton CornerRadius="2" ...
+   ```
+
 6. The [ThemedWindow.HeaderItems](https://docs.devexpress.com/WPF/DevExpress.Xpf.Core.ThemedWindow.HeaderItems) property to add elements to the window header.
 
 Please note that you need to restore the **Mono.Cecil** NuGet package to run the sample. 
