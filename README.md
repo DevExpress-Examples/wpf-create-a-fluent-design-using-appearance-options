@@ -2,6 +2,7 @@
 ![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/352598134/20.2.6%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T985945)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
+[![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
 # Create a Unique Design for a WPF View using Appearance Options
 
@@ -84,3 +85,10 @@ Please note that you need to restore the **Mono.Cecil** NuGet package to run the
 * [Fluent Design Support](https://docs.devexpress.com/WPF/401394/common-concepts/fluent-design-support)
 * [Palettes](https://docs.devexpress.com/WPF/400728/common-concepts/themes/palettes)
 * [SVG Image Palettes](https://docs.devexpress.com/WPF/120131/common-concepts/images/svg-images#svg-image-palettes)
+<!-- feedback -->
+## Does this example address your development requirements/objectives?
+
+[<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-create-a-fluent-design-using-appearance-options&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-create-a-fluent-design-using-appearance-options&~~~was_helpful=no)
+
+(you will be redirected to DevExpress.com to submit your response)
+<!-- feedback end -->
